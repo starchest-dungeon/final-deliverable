@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps; 
 
 //referencing potato_1 code
 
@@ -10,6 +11,9 @@ public class ProtagonistBehaviour : MonoBehaviour {
     [SerializeField]
     private float speed;
     private Rigidbody2D m_Rb;
+
+    public TilemapRenderer door;
+    public TilemapCollider2D doorCol;
 
     public Animator sideAnim;
     public SpriteRenderer sideRender;
@@ -96,6 +100,12 @@ public class ProtagonistBehaviour : MonoBehaviour {
                 dashCounter = dashLength;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.O)) {
+            door.GetComponent<Renderer>().enabled = false;
+            doorCol.GetComponent<TilemapCollider2D>().enabled = false;
+        }
+        
 
         if (dashCounter > 0) {
             dashCounter -= Time.deltaTime;

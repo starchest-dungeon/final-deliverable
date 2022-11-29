@@ -2742,6 +2742,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
+  door: {fileID: 1426734337}
+  doorCol: {fileID: 1426734336}
   sideAnim: {fileID: 129585733}
   sideRender: {fileID: 129585730}
   side: {fileID: 129585728}
