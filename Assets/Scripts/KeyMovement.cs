@@ -10,7 +10,7 @@ public class KeyMovement : MonoBehaviour {
 
     private bool isFollowing;
     public float followSpeed;
-    private Transform followTarget;
+    public Transform followTarget;
 
     void Start() {
         //isFollowing = true;
@@ -26,6 +26,7 @@ public class KeyMovement : MonoBehaviour {
         if (!isFollowing) {
             ProtagonistBehaviour thePlayer = FindObjectOfType<ProtagonistBehaviour>();
             followTarget = thePlayer.transform;
+            thePlayer.followingKey = this;
             isFollowing = true;
         }
     }

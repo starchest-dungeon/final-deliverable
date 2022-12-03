@@ -25,6 +25,8 @@ public class ProtagonistBehaviour : MonoBehaviour {
     public Animator backAnim;
     public GameObject back;
 
+    public KeyMovement followingKey;
+
     //from: https://www.youtube.com/watch?v=tH57EInEb58
 
     private float activeMoveSpeed;
