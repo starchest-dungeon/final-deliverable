@@ -23,11 +23,14 @@ public class KeyMovement : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (!isFollowing) {
-            ProtagonistBehaviour thePlayer = FindObjectOfType<ProtagonistBehaviour>();
-            followTarget = thePlayer.transform;
-            thePlayer.followingKey = this;
-            isFollowing = true;
+        if (col.tag == "Player") {
+            if (!isFollowing) {
+                ProtagonistBehaviour thePlayer = FindObjectOfType<ProtagonistBehaviour>();
+                followTarget = thePlayer.transform;
+                thePlayer.followingKey = this;
+                isFollowing = true;
+            }
         }
+        
     }
 }
