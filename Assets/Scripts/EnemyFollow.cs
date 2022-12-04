@@ -20,11 +20,14 @@ public class EnemyFollow : MonoBehaviour
     void Start() 
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //GameObject enemyTag = GameObject.FindGameObjectWithTag("Enemy");     
+        
     }
 
     // Update is called once per frame
     void Update() 
-    {
+    {             
+          
         if(moving)
         {
             if (Vector2.Distance(transform.position, target.position) > stoppingDistance) 
@@ -75,4 +78,13 @@ public class EnemyFollow : MonoBehaviour
         //this.GetComponent<SpriteRenderer>().color = Color.red;
         enemyContactPlayer();    
     }
+    private void onCollisionEnter(Collider collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(collision.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>()); 
+            Physics2D.IgnoreCollision(collision.GetComponent<CapsuleCollider2D>(), GetComponent<CapsuleCollider2D>());
+        }
+    }
+    
 }
