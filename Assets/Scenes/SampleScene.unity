@@ -28905,7 +28905,7 @@ MonoBehaviour:
   player2: {fileID: 364115546}
   healthbar: {fileID: 1643269057}
   moveSpeed: 8
-  followRange: 70
+  followRange: 50
 --- !u!1 &1642065176
 GameObject:
   m_ObjectHideFlags: 0
