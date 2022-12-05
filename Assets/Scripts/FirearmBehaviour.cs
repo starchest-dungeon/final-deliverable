@@ -8,6 +8,7 @@ public class FirearmBehaviour : MonoBehaviour {
     public Transform firePoint;
     public GameObject bulletPrefab;
     public Animator muzzle;
+    public Animator emptyClip;
     public Animator fireArm;
 
     private float bulletSpeed = 40f;
@@ -47,7 +48,12 @@ public class FirearmBehaviour : MonoBehaviour {
                 nextFire = Time.time + cooldown;
                 currentClip--;
             }
+        } else if (currentClip <= 0) {
+            if (Input.GetMouseButtonDown(0) && Time.time > nextFire) {
+                emptyClip.SetTrigger(name:"shoot");
+            }
         }
+        
     }
 
     public void Reload() {

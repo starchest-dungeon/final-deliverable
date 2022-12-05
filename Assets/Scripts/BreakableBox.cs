@@ -19,14 +19,14 @@ public class BreakableBox : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Bullet") {
+            breakPot.Play();
             StartCoroutine(Break());
         }
     }
 
     private IEnumerator Break() {
         particle.Play();
-        breakPot.Play();
-
+        
         potRen.enabled = false;
         potCol.enabled = false;
 

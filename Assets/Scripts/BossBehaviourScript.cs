@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossBehaviourScript : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class BossBehaviourScript : MonoBehaviour {
     public Player player;
     public Transform player2;
     //public Text totalKills;
+
+    public Slider healthbar;
 
     public float moveSpeed;
 
@@ -42,9 +45,12 @@ public class BossBehaviourScript : MonoBehaviour {
         {
             inRange = false;
         }
+
+        healthbar.value = health;
     }
 
     void Start() {
+        healthbar.gameObject.SetActive(false);
         //totalKills.text = "Kills: " + player.kills;
     }
 
