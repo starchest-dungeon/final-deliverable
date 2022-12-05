@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class BossRoomLogic : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class BossRoomLogic : MonoBehaviour {
 
     public TilemapRenderer door;
     public TilemapCollider2D doorCol;
+
+    public Slider healthbar;
 
     void Start() {
         boss = FindObjectOfType<BossBehaviourScript>();
@@ -22,6 +25,7 @@ public class BossRoomLogic : MonoBehaviour {
         if (col.tag == "Player") {
             door.GetComponent<Renderer>().enabled = true;
             doorCol.GetComponent<TilemapCollider2D>().enabled = true;
+            healthbar.gameObject.SetActive(true);
 
             boss.moveSpeed = 0f;
             boss.anim.SetTrigger("playerEnter");

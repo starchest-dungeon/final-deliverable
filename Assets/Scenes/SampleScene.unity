@@ -4722,6 +4722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1426734337}
   doorCol: {fileID: 1426734336}
+  healthbar: {fileID: 1643269057}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
