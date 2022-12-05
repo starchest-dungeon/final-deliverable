@@ -33,6 +33,11 @@ public class EnemyDeath : MonoBehaviour {
             }
 
         }
+        if(col.gameObject.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(col.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>()); 
+            Physics2D.IgnoreCollision(col.GetComponent<CapsuleCollider2D>(), GetComponent<CapsuleCollider2D>());
+        }
 
     }
 

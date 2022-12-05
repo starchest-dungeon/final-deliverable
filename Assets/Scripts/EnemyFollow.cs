@@ -78,13 +78,5 @@ public class EnemyFollow : MonoBehaviour
         //this.GetComponent<SpriteRenderer>().color = Color.red;
         enemyContactPlayer();    
     }
-    private void onCollisionEnter(Collider collision)
-    {
-        if(collision.gameObject.tag == "Enemy")
-        {
-            Physics2D.IgnoreCollision(collision.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>()); 
-            Physics2D.IgnoreCollision(collision.GetComponent<CapsuleCollider2D>(), GetComponent<CapsuleCollider2D>());
-        }
-    }
     
 }
