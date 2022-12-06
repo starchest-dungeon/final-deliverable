@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Prop
   - Boss
+  - Knife
   layers:
   - Default
   - TransparentFX

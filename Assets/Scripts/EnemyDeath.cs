@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyDeath : MonoBehaviour {
 
-    public int health;
+    public float health;
     public int maxHealth = 4;
     public SpriteRenderer drop;
     public BoxCollider2D dropCol;
@@ -32,6 +32,20 @@ public class EnemyDeath : MonoBehaviour {
                 enemyHealth.SetHealth(health, maxHealth);
             }
 
+        } else if (col.gameObject.tag.Equals("Knife")) {
+            if (health <= 0) {
+                anim.SetTrigger("Dying");
+                Debug.Log("dies");
+                player.kills++;
+                totalKills.text = "Score: " + player.kills;
+                Destroy(gameObject, 0.5f);
+                drop.GetComponent<Renderer>().enabled = true;
+                dropCol.GetComponent<BoxCollider2D>().enabled = true;
+            } else {
+                anim.SetTrigger("hit");
+                health -= 0.5f;
+                enemyHealth.SetHealth(health, maxHealth);
+            }
         }
         if(col.gameObject.tag == "Enemy")
         {

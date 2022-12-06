@@ -11,21 +11,47 @@ public class FirearmBehaviour : MonoBehaviour {
     public Animator emptyClip;
     public Animator fireArm;
 
+    public SpriteRenderer firearmMini, knife;
+
     private float bulletSpeed = 40f;
     private float cooldown = 0.2f;
     private float nextFire = 0f;
+
+    private bool weaponSwitched;
+
+    public ProtagonistBehaviour protag;
 
     public int currentClip, maxClipSize = 10, currentAmmo, maxAmmoSize = 100;
 
     void Start() {
         myRender = this.GetComponent<SpriteRenderer>();
+        knife.GetComponent<Renderer>().enabled= false;
     }
 
     void Update() {
-        ProcessBulletSpawn();
+
+        if (weaponSwitched) {
+            Swing(); 
+        } else {
+            ProcessBulletSpawn();
+        }
 
         if (Input.GetKeyDown(KeyCode.R)) {
             Reload();
+        }
+
+        if (Input.GetMouseButtonDown(1)) {
+            weaponSwitched = !weaponSwitched;
+
+            if (weaponSwitched) {
+                knife.GetComponent<Renderer>().enabled= true;
+                myRender.GetComponent<Renderer>().enabled= false;
+                firearmMini.GetComponent<Renderer>().enabled= false;
+            } else {
+                knife.GetComponent<Renderer>().enabled= false;
+                myRender.GetComponent<Renderer>().enabled= true;
+                firearmMini.GetComponent<Renderer>().enabled= true;
+            }
         }
         /*
         if (Input.GetAxisRaw("Horizontal") > 0) {
@@ -54,6 +80,14 @@ public class FirearmBehaviour : MonoBehaviour {
             }
         }
         
+    }
+
+    private void Swing() {
+        if (Input.GetMouseButtonDown(0)) {
+            protag.sideAnim.SetTrigger(name:"slash");
+            protag.backAnim.SetTrigger(name:"slash");
+            protag.frontAnim.SetTrigger(name:"slash");
+        }
     }
 
     public void Reload() {
