@@ -11,7 +11,7 @@ public class VictoryScreen : MonoBehaviour
     }
 
     public void RestartButton() {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Game");
     }
 
     public void ExitButton() {
