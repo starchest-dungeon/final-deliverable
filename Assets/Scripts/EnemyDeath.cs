@@ -22,7 +22,7 @@ public class EnemyDeath : MonoBehaviour {
                 anim.SetTrigger("Dying");
                 Debug.Log("dies");
                 player.kills++;
-                totalKills.text = "Kills: " + player.kills;
+                totalKills.text = "Score: " + player.kills;
                 Destroy(gameObject, 0.5f);
                 drop.GetComponent<Renderer>().enabled = true;
                 dropCol.GetComponent<BoxCollider2D>().enabled = true;
@@ -44,7 +44,7 @@ public class EnemyDeath : MonoBehaviour {
     void Start() {
         drop.GetComponent<Renderer>().enabled = false;
         dropCol.GetComponent<BoxCollider2D>().enabled = false;
-        totalKills.text = "Kills: " + player.kills;
+        totalKills.text = "Score: " + player.kills;
         health = maxHealth;
         enemyHealth.SetHealth(health, maxHealth);
     }
