@@ -9,14 +9,6 @@ public class BreakableBox : MonoBehaviour {
     public CapsuleCollider2D potCol;
     public AudioSource breakPot;
 
-    void Start() {
-        
-    }
-
-    void Update() {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Bullet") {
             breakPot.Play();
