@@ -939,7 +939,7 @@ AudioSource:
   m_Volume: 0.34
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -3167,8 +3167,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24, y: 1.44}
-  m_Size: {x: 5.8, y: 10.18}
+  m_Offset: {x: -0.24, y: 0.22}
+  m_Size: {x: 3.96, y: 5.3}
   m_Direction: 0
 --- !u!114 &364115553
 MonoBehaviour:

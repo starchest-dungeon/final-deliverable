@@ -63,9 +63,11 @@ public class ProtagonistBehaviour : MonoBehaviour {
             side.GetComponent<Renderer>().enabled= true;
             front.GetComponent<Renderer>().enabled= false;
             back.GetComponent<Renderer>().enabled= false;
-            sideRender.flipX = false;
+            transform.localScale = new Vector3(1.1f, 1.2f, 1.2f);
+            //sideRender.flipX = false;
         } else if (Input.GetAxisRaw("Horizontal") < 0) {
-            sideRender.flipX = true;
+            transform.localScale = new Vector3(-1.1f, 1.2f, 1.2f);
+            //sideRender.flipX = true;
             side.GetComponent<Renderer>().enabled= true;
             front.GetComponent<Renderer>().enabled= false;
             back.GetComponent<Renderer>().enabled= false;

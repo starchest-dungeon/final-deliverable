@@ -25,14 +25,12 @@ public class KnifeBehaviour : MonoBehaviour {
                 side.GetComponent<Renderer>().enabled= true;
                 front.GetComponent<Renderer>().enabled= false;
                 back.GetComponent<Renderer>().enabled= false;
-                side.flipX = false;
                 //sideKnife.transform.position.x = 1;
-                sideKnife.transform.position = new Vector3(protag.transform.position.x - 1, protag.transform.position.y - 1.5f , protag.transform.position.z);
+                //sideKnife.transform.position = new Vector3(protag.transform.position.x - 1, protag.transform.position.y - 1.5f , protag.transform.position.z);
             } else if (Input.GetAxisRaw("Horizontal") < 0) {
-                side.flipX = true;
                 //sideKnife.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                 //sideKnife.transform.position.x = -1;
-                sideKnife.transform.position = new Vector3(protag.transform.position.x + 1, protag.transform.position.y - 1.5f , protag.transform.position.z);
+                //sideKnife.transform.position = new Vector3(protag.transform.position.x + 1, protag.transform.position.y - 1.5f , protag.transform.position.z);
                 side.GetComponent<Renderer>().enabled= true;
                 front.GetComponent<Renderer>().enabled= false;
                 back.GetComponent<Renderer>().enabled= false;
