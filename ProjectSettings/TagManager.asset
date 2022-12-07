@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - Knife
   - Boss Arm
+  - Trigger1
   layers:
   - Default
   - TransparentFX
