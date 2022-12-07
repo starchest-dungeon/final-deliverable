@@ -10,6 +10,7 @@ TagManager:
   - Prop
   - Boss
   - Knife
+  - Boss Arm
   layers:
   - Default
   - TransparentFX

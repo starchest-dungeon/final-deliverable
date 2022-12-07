@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class BossRoomLogic : MonoBehaviour {
 
+    //public Player player;
     private BossBehaviourScript boss;
 
     public TilemapRenderer door;
@@ -26,11 +27,12 @@ public class BossRoomLogic : MonoBehaviour {
             door.GetComponent<Renderer>().enabled = true;
             doorCol.GetComponent<TilemapCollider2D>().enabled = true;
             healthbar.gameObject.SetActive(true);
-
             boss.moveSpeed = 0f;
             boss.anim.SetTrigger("playerEnter");
             StartCoroutine(waiter());
             boss.moveSpeed = 8f;
+            //player.setBossFightHealth();
+
         }
     }
 

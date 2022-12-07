@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
     bool isDead = false;
     public int maxHealth = 4;
     public int currentHealth;
+    public int bossFightHealth = 10;
+    public float cooldownTime = 2;
+    private float nextFireTime = 0;
+    private bool cooldown = false;
     public int kills = 0;
 
     public static bool damageTaken;
@@ -30,17 +34,38 @@ public class Player : MonoBehaviour
             GameOver();
             gameObject.SetActive(false);
         }
+        if(Time.time > nextFireTime)
+        {
+            cooldown = false;
+        }
 
         // if (kills == 15) {
         //     Victory();
         //     gameObject.SetActive(false);
         // }
     }
+    public void setBossFightHealth()
+    {
+        healthBar.SetMaxHealth(bossFightHealth);
+        currentHealth = bossFightHealth;
+    }
 
     void  OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.tag.Equals("Boss")) {
-            TakeDamage(1);
+        if (col.gameObject.tag.Equals("Boss Arm")) 
+        {            
+            if(!cooldown)
+            {
+                TakeBossDamage(1);
+                cooldown = true;
+                nextFireTime = Time.time+cooldownTime;
+            }
         }
+    }
+    public void TakeBossDamage(int damage)
+    {
+        damageTaken = true;
+        currentHealth-=damage;
+        healthBar.SetHealth(currentHealth);
     }
 
     public void TakeDamage(int damage) 

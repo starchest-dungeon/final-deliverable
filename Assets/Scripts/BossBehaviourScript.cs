@@ -17,6 +17,8 @@ public class BossBehaviourScript : MonoBehaviour {
 
     public float followRange;
     private bool inRange;
+    bool fightStarted = false;
+    int numStarted = 0;
 
     void  OnTriggerEnter2D(Collider2D col) { 
 
@@ -39,12 +41,21 @@ public class BossBehaviourScript : MonoBehaviour {
         
         if (Vector2.Distance(transform.position, player2.position) <= followRange)
         {
-            inRange = true;
+            inRange = true;            
         }
         else
         {
             inRange = false;
         }
+        //Increase player health for boss fight
+        /*
+        if(numStarted==1)
+        {
+            player.setBossFightHealth();
+            numStarted++;
+            fightStarted = true;
+        }
+        */
 
         healthbar.value = health;
     }
@@ -58,6 +69,13 @@ public class BossBehaviourScript : MonoBehaviour {
     {
         if (inRange)
         {
+            //Increase player health for boss fight
+            /*
+            if(!fightStarted)
+            {
+                numStarted ++;
+            }   
+            */         
             transform.position = Vector2.MoveTowards(transform.position, player2.position, moveSpeed * Time.deltaTime);
         }
     }
