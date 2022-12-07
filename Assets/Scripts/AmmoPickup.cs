@@ -12,7 +12,8 @@ public class AmmoPickup : MonoBehaviour{
         */
         FirearmBehaviour weapon = col.gameObject.GetComponentInChildren<FirearmBehaviour>();
         if (weapon) {
-            weapon.AddAmmo(weapon.maxAmmoSize);
+            //weapon.AddAmmo(weapon.maxAmmoSize);
+            weapon.AddAmmo(20);
             Destroy(gameObject);
         }
     }

@@ -22,7 +22,7 @@ public class BreakableHealthBox : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "Bullet") {
+        if (col.tag == "Bullet" || col.tag == "Knife") {
             breakPot.Play();
             StartCoroutine(Break());
         }
