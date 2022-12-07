@@ -17,6 +17,6 @@ public class AmmoText : MonoBehaviour {
     }
 
     public void UpdateAmmoTest() {
-        text.text = $"{weapon.currentClip} / {weapon.maxClipSize} | {weapon.currentAmmo} / {weapon.maxAmmoSize}";
+        text.text = $"bullets: {weapon.currentClip}        bullet storage: {weapon.currentAmmo}";
     }
 }

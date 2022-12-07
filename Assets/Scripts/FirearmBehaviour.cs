@@ -9,6 +9,7 @@ public class FirearmBehaviour : MonoBehaviour {
     public GameObject bulletPrefab;
     public Animator muzzle;
     public Animator emptyClip;
+    public Animator ammoIndicator;
     public Animator fireArm;
 
     public SpriteRenderer firearmMini, knife;
@@ -76,6 +77,7 @@ public class FirearmBehaviour : MonoBehaviour {
             }
         } else if (currentClip <= 0) {
             if (Input.GetMouseButtonDown(0) && Time.time > nextFire) {
+                ammoIndicator.SetTrigger(name:"button");
                 emptyClip.SetTrigger(name:"shoot");
             }
         }

@@ -38,7 +38,7 @@ public class EnemyDeath : MonoBehaviour {
                 Debug.Log("dies");
                 player.kills++;
                 totalKills.text = "Score: " + player.kills;
-                Destroy(gameObject, 0.5f);
+                Destroy(gameObject, 0.15f);
                 drop.GetComponent<Renderer>().enabled = true;
                 dropCol.GetComponent<BoxCollider2D>().enabled = true;
             } else {
