@@ -1,0 +1,49 @@
+
+/*source [1]: https://www.w3schools.com/howto/howto_js_topnav.asp*/
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: rgb(206, 206, 206);
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #5e8faf;
+    color: white;
+}
+
+/*source [1] END*/
+
+.topnav h1 {
+    display:inline;
+    margin-left: 50px;
+    color: rgb(219, 232, 255);
+}
+
+.homeImage {
+    background-image: url("images/wooden-board.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 5px solid #555;
+    height: 350px;
+}
+
+body {
+    background-color: rgb(168, 148, 137);
+}
