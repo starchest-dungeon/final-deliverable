@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BossBehaviourScript : MonoBehaviour {
 
-    int health = 30;
+    int health = 45;
     public Animator anim;
     public Player player;
     public Transform player2;
@@ -22,7 +22,7 @@ public class BossBehaviourScript : MonoBehaviour {
 
     void  OnTriggerEnter2D(Collider2D col) { 
 
-        if (col.gameObject.tag.Equals("Bullet")) {
+        if (col.gameObject.tag.Equals("Bullet") || col.gameObject.tag.Equals("Knife")) {
 
             if (health <= 0) {
                 //anim.SetTrigger("Dying");

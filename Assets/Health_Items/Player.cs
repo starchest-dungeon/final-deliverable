@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         {            
             if(!cooldown)
             {
-                TakeBossDamage(1);
+                TakeBossDamage(3);
                 cooldown = true;
                 nextFireTime = Time.time+cooldownTime;
             }
